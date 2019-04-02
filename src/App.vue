@@ -1,6 +1,11 @@
 <template>
   <div id="app">
     <Header :title = "h_title"/>
+    <ul>
+      <li v-for="item in items">
+        {{item}}
+      </li>
+    </ul>
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
     <h1>{{ hello }}</h1>
@@ -19,7 +24,20 @@ export default {
     return {
       hello: "Hello world!!!",
       h_title: "My Unsplash App",
-      f_title: "My footer"
+      f_title: "My footer",
+      items:
+        ["Table", "Chair", "Lamp"],
+      animals:
+        [{
+          name: "Riri",
+          age: 32
+        },{
+          name: "Fifi",
+          age: 33
+        }, {
+          name: "Loulou",
+          age: 34
+        }]
     };
   },
   components: {
