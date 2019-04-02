@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header/>
+    <Header :title = "title"/>
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
     <h1>{{ hello }}</h1>
@@ -17,7 +17,8 @@ export default {
   name: 'app',
   data() {
     return {
-      hello: "Hello world!!!"
+      hello: "Hello world!!!",
+      title: "My Unsplash App"
     };
   },
   components: {
