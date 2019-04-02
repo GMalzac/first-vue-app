@@ -1,10 +1,10 @@
 <template>
   <div id="app">
-    <Header :title = "title"/>
+    <Header :title = "h_title"/>
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
     <h1>{{ hello }}</h1>
-    <Footer :title = "title"/>
+    <Footer :title = "f_title"/>
   </div>
 </template>
 
@@ -18,7 +18,8 @@ export default {
   data() {
     return {
       hello: "Hello world!!!",
-      title: "My Unsplash App"
+      h_title: "My Unsplash App",
+      f_title: "My footer"
     };
   },
   components: {
