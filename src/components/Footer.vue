@@ -1,14 +1,17 @@
 <template>
   <div>
     <footer>
-      <h2>This is my footer</h2>
+      <h2>{{title}}</h2>
     </footer>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Footer'
+  name: 'Footer',
+  props: {
+    title: String
+  }
 }
 </script>
 
