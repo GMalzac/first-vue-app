@@ -13,7 +13,11 @@
       </li>
     </ul>
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HelloWorld
+      v-bind:key="person.id"
+      v-for="person in people"
+      msg="Welcome to Your Vue.js App"
+    />
     <h1>{{ hello }}</h1>
     <Footer :title = "f_title"/>
   </div>
@@ -39,6 +43,23 @@ export default {
           name: "Riri",
           age: 32
         },
+      people: [
+        {
+          id: 1,
+          name: "Riri",
+          age: 32
+        },
+        {
+          id: 2,
+          name: "Fifi",
+          age: 32
+        },
+        {
+          id: 3,
+          name: "Loulou",
+          age: 32
+        }
+      ]
     }
   },
   components: {
