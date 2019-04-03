@@ -1,18 +1,20 @@
 <template>
   <ul>
     <li v-for="picture in pictures">
-      {{picture.urls.raw}}
+      <Picture :picture="picture"/>
     </li>
   </ul>
 </template>
 
 <script>
+import Picture from './Picture.vue'
+
 export default {
   name: 'PicturesList',
   data() {
     return {
       pictures: []
-    }
+    };
   },
   created: function() {
     this.fetchData();
@@ -27,9 +29,20 @@ export default {
         console.log(e)
       }
     }
+  },
+  components: {
+    Picture
   }
-}
+};
 </script>
 
 <style lang="css" scoped>
+ul {
+  display: grid;
+  list-style: none;
+  padding: 1rem;
+  margin: 0;
+  grid-row-gap: 1rem;
+  grid-template-columns: repeat(6, 1fr);
+}
 </style>
