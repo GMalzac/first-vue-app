@@ -1,7 +1,9 @@
 <template>
-  <div>
-    {{picture.urls.raw}}
-  </div>
+  <ul>
+    <li v-for="picture in pictures">
+      {{picture.urls.raw}}
+    </li>
+  </ul>
 </template>
 
 <script>
@@ -9,7 +11,7 @@ export default {
   name: 'PicturesList',
   data() {
     return {
-      picture: {}
+      pictures: []
     }
   },
   created: function() {
@@ -18,9 +20,9 @@ export default {
   methods: {
     fetchData: async function() {
       try {
-        const res = await fetch(`https://api.unsplash.com/photos/random?client_id=${process.env.VUE_APP_UNSPLASH_API_ACCESS_KEY}`);
-        const picture = await res.json();
-        this.picture = picture
+        const res = await fetch(`https://api.unsplash.com/photos?client_id=${process.env.VUE_APP_UNSPLASH_API_ACCESS_KEY}`);
+        const pictures = await res.json();
+        this.pictures = pictures
       } catch(e) {
         console.log(e)
       }
