@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "core-js": "^2.6.5",
+    "dotenv": "^7.0.0",
     "vue": "^2.6.6"
   },
   "devDependencies": {

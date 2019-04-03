@@ -2,10 +2,8 @@
   <div id="app" v-if="status === 'ready'">
     <Header :title = "h_title"/>
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld
-      msg="Welcome to Your Vue.js App"
-    />
     <h1>{{ hello }}</h1>
+    <PicturesList/>
     <Footer :title = "f_title"/>
   </div>
   <div v-else-if="status === 'loading'">
@@ -17,23 +15,23 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 import Header from './components/Header.vue'
+import PicturesList from './components/PicturesList.vue'
 import Footer from './components/Footer.vue'
 
 export default {
   name: 'app',
   data() {
     return {
-      hello: "Hello world!!!",
+      hello: "Hello world!",
       h_title: "My Unsplash App",
       f_title: "My footer",
       status: "ready",
     }
   },
   components: {
-    HelloWorld,
     Header,
+    PicturesList,
     Footer
   }
 }
