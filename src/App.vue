@@ -1,25 +1,18 @@
 <template>
-  <div id="app">
+  <div id="app" v-if="status === 'ready'">
     <Header :title = "h_title"/>
-    <ul>
-      <li v-for="item in items">
-        {{item}}
-      </li>
-      <li v-for="value in profile">
-        {{value}}
-      </li>
-      <li v-for="(value, key, index) in profile">
-        {{index}}.{{key}}: {{value}}
-      </li>
-    </ul>
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld
-      v-bind:key="person.id"
-      v-for="person in people"
       msg="Welcome to Your Vue.js App"
     />
     <h1>{{ hello }}</h1>
     <Footer :title = "f_title"/>
+  </div>
+  <div v-else-if="status === 'loading'">
+    Loading
+  </div>
+  <div v-else>
+    Error
   </div>
 </template>
 
@@ -35,31 +28,7 @@ export default {
       hello: "Hello world!!!",
       h_title: "My Unsplash App",
       f_title: "My footer",
-      items:
-        ["Table", "Chair", "Lamp"],
-      profile:
-        {
-          id: 1,
-          name: "Riri",
-          age: 32
-        },
-      people: [
-        {
-          id: 1,
-          name: "Riri",
-          age: 32
-        },
-        {
-          id: 2,
-          name: "Fifi",
-          age: 32
-        },
-        {
-          id: 3,
-          name: "Loulou",
-          age: 32
-        }
-      ]
+      status: "ready",
     }
   },
   components: {
