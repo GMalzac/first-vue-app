@@ -5,6 +5,12 @@
       <li v-for="item in items">
         {{item}}
       </li>
+      <li v-for="value in profile">
+        {{value}}
+      </li>
+      <li v-for="(value, key, index) in profile">
+        {{index}}.{{key}}: {{value}}
+      </li>
     </ul>
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
@@ -27,18 +33,13 @@ export default {
       f_title: "My footer",
       items:
         ["Table", "Chair", "Lamp"],
-      animals:
-        [{
+      profile:
+        {
+          id: 1,
           name: "Riri",
           age: 32
-        },{
-          name: "Fifi",
-          age: 33
-        }, {
-          name: "Loulou",
-          age: 34
-        }]
-    };
+        },
+    }
   },
   components: {
     HelloWorld,
