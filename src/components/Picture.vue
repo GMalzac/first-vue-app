@@ -1,10 +1,16 @@
 <template>
-    <img :src="picture.urls.small" :alt="picture.alt_description">
+    <router-link :to="picturePath"><img :src="picture.urls.small" :alt="picture.alt_description">
+    </router-link>
 </template>
 
 <script>
   export default {
-    props: ['picture']
+    props: ['picture'],
+    computed: {
+      picturePath: function() {
+        return `/picture/${this.picture.id}`
+      }
+    }
   }
 </script>
 

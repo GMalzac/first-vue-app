@@ -1,7 +1,7 @@
 <template>
   <div>
     <header>
-      <h1>{{reverseText}}</h1>
+      <h1>{{title}}</h1>
     </header>
   </div>
 </template>

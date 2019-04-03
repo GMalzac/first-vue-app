@@ -1,22 +1,13 @@
 <template>
-  <div id="app" v-if="status === 'ready'">
+  <div id="app">
     <Header :title = "h_title"/>
-    <img alt="Vue logo" src="./assets/logo.png">
-    <h1>{{ hello }}</h1>
-    <PicturesList/>
+    <router-view/>
     <Footer :title = "f_title"/>
-  </div>
-  <div v-else-if="status === 'loading'">
-    Loading
-  </div>
-  <div v-else>
-    Error
   </div>
 </template>
 
 <script>
 import Header from './components/Header.vue'
-import PicturesList from './components/PicturesList.vue'
 import Footer from './components/Footer.vue'
 
 export default {
@@ -31,7 +22,6 @@ export default {
   },
   components: {
     Header,
-    PicturesList,
     Footer
   }
 }
