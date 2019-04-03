@@ -1,7 +1,7 @@
 <template>
   <div>
     <header>
-      <h1>{{title}}</h1>
+      <h1>{{reverseText}}</h1>
     </header>
   </div>
 </template>
@@ -11,6 +11,11 @@ export default {
   name: 'Header',
   props: {
     title: String
+  },
+  computed: {
+    reverseText: function() {
+      return this.title.split('').reverse().join('')
+    }
   }
 }
 </script>
