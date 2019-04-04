@@ -60,7 +60,7 @@ export default {
   }
 }
 
-@media(max-width: 1439px) {
+@media(max-width: 1899px) {
   ul {
     display: grid;
     list-style: none;
@@ -71,18 +71,18 @@ export default {
   }
 }
 
-@media(max-width: 1024px) {
+@media(max-width: 1299px) {
   ul {
     display: grid;
     list-style: none;
     padding: 1rem;
     margin: 0;
     grid-row-gap: 1rem;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media(max-width: 768px) {
+@media(max-width: 1024px) {
   ul {
     display: grid;
     list-style: none;
