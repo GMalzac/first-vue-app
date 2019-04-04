@@ -8,6 +8,7 @@
 </template>
 
 <script>
+  // const BACKDROP_PATH=picture.urls
   export default {
     name: 'PictureDetail',
     data() {
@@ -17,6 +18,13 @@
     },
     created: function() {
       this.fetchData();
+    },
+    computed: {
+      styles() {
+        return {
+
+        }
+      }
     },
     methods: {
       fetchData: async function() {

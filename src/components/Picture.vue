@@ -1,5 +1,5 @@
 <template>
-    <router-link :to="picturePath"><img :src="picture.urls.small" :alt="picture.alt_description">
+    <router-link :to="picturePath"><img :src="thumbnailPath" :alt="picture.alt_description">
     </router-link>
 </template>
 
@@ -9,6 +9,9 @@
     computed: {
       picturePath: function() {
         return `/picture/${this.picture.id}`
+      },
+      thumbnailPath: function() {
+        return `${this.picture.urls.raw}&fit=crop&w=400&h=200&dpi=1`
       }
     }
   }

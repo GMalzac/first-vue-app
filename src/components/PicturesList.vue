@@ -43,6 +43,6 @@ ul {
   padding: 1rem;
   margin: 0;
   grid-row-gap: 1rem;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(5, 1fr);
 }
 </style>
