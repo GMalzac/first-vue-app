@@ -6,9 +6,8 @@
         @mouseover="hover = true"
         @mouseleave="hover = false"
       >
-<!--         <img
-          :src="thumbnailPath" :alt="picture.alt_description"> -->
         <h2 v-if="hover">by {{picture.user.username}}</h2>
+        <img :src="userProfilePicPath">
       </div>
     </router-link>
 </template>
@@ -32,6 +31,9 @@
       },
       thumbnailPath: function() {
         return `${this.picture.urls.raw}&fit=crop&w=400&h=200&dpi=1`
+      },
+      userProfilePicPath: function() {
+        return this.picture.user.profile_image.large
       }
     }
   }
@@ -48,6 +50,7 @@ a {
   height: 200px;
   margin: 5px;
   box-shadow: 0 0 5px black;
+  position: relative;
 }
 
 .card:hover {
@@ -65,7 +68,14 @@ h2 {
   text-decoration: none;
 }
 
-h2:hover {
-  filter: none !important;
+
+img {
+  height: 20%;
+  border-radius: 50%;
+  border: solid 1.5px white;
+  box-shadow: 0 0 1px black;
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
 }
 </style>

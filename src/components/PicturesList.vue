@@ -37,17 +37,10 @@ export default {
 </script>
 
 <style lang="css" scoped>
-
-/*@media(min-width: 1440px) {
-  ul {
-    display: grid;
-    list-style: none;
-    padding: 1rem;
-    margin: 0;
-    grid-row-gap: 1rem;
-    grid-template-columns: repeat(3, 1fr);
-  }
-}*/
+li {
+  text-align: center;
+  margin: auto;
+}
 
 @media(min-width: 1900px) {
   ul {

@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <Header :title = "h_title"/>
-      <router-view/>
+      <div class="minheight">
+        <router-view/>
+      </div>
     <Footer :title = "f_title"/>
   </div>
 </template>
@@ -34,6 +36,10 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+
+.minheight {
+  min-height: calc(100vh - 220px);
 }
 
 </style>
