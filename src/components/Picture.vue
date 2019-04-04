@@ -19,7 +19,14 @@
 
 <style lang="css" scoped>
 img {
-  box-shadow: 0 0 5px black;
   margin: 5px;
+  box-shadow: 0 0 5px black;
+}
+
+img:hover {
+  transition:linear 0.2s;
+  transform: scale(1.01);
+  -webkit-filter: blur(5px) grayscale(60%); /* Safari 6.0 - 9.0 */
+  filter: blur(1px) grayscale(60%);
 }
 </style>
