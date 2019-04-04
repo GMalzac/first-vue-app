@@ -37,12 +37,61 @@ export default {
 </script>
 
 <style lang="css" scoped>
-ul {
-  display: grid;
-  list-style: none;
-  padding: 1rem;
-  margin: 0;
-  grid-row-gap: 1rem;
-  grid-template-columns: repeat(5, 1fr);
+
+/*@media(min-width: 1440px) {
+  ul {
+    display: grid;
+    list-style: none;
+    padding: 1rem;
+    margin: 0;
+    grid-row-gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}*/
+
+@media(min-width: 1900px) {
+  ul {
+    display: grid;
+    list-style: none;
+    padding: 1rem;
+    margin: 0;
+    grid-row-gap: 1rem;
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
+
+@media(max-width: 1439px) {
+  ul {
+    display: grid;
+    list-style: none;
+    padding: 1rem;
+    margin: 0;
+    grid-row-gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media(max-width: 1024px) {
+  ul {
+    display: grid;
+    list-style: none;
+    padding: 1rem;
+    margin: 0;
+    grid-row-gap: 1rem;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media(max-width: 768px) {
+  ul {
+    display: grid;
+    list-style: none;
+    padding: 1rem;
+    margin: 0;
+    grid-row-gap: 1rem;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+
 </style>

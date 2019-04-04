@@ -32,6 +32,7 @@ export default {
     background-color: #111;
     color: white;
     padding: 20px;
+    width: 100%;
   }
   h1 {
     margin: 0;
