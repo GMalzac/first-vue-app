@@ -3,12 +3,10 @@
     <img :src="picture.urls.regular" :alt="picture.alt_description">
     <h1>By {{picture.user.username}}</h1>
     <h4>Posted on {{picture.created_at}}</h4>
-
   </div>
 </template>
 
 <script>
-  // const BACKDROP_PATH=picture.urls
   export default {
     name: 'PictureDetail',
     data() {
@@ -19,13 +17,7 @@
     created: function() {
       this.fetchData();
     },
-    computed: {
-      styles() {
-        return {
 
-        }
-      }
-    },
     methods: {
       fetchData: async function() {
         try {
