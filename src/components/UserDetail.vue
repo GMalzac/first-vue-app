@@ -33,7 +33,7 @@ export default {
   },
   computed: {
     userPath: function() {
-      return `/user/${this.picture.user.id}`
+      return `/user/${this.picture.user.username}`
     },
     twitterPath: function() {
       return `https://www.twitter.com/${this.picture.user.twitter_username}`

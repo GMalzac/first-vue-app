@@ -20,7 +20,7 @@ export default new Router({
       component: PictureDetail
     },
     {
-      path: '/user/:id',
+      path: '/user/:username',
       name: 'User Pictures',
       component: UserPictures
     }

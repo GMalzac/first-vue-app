@@ -11,18 +11,32 @@ import Picture from './Picture.vue'
 
 export default {
   name: 'PicturesList',
+
   data() {
     return {
       pictures: []
     };
   },
   created: function() {
-    this.fetchData();
+    if (this.$route.params.username) {
+      this.fetchUserData()
+    } else {
+      this.fetchData();
+    }
   },
   methods: {
     fetchData: async function() {
       try {
         const res = await fetch(`https://api.unsplash.com/photos/?per_page=40&order_by=latest&client_id=${process.env.VUE_APP_UNSPLASH_API_ACCESS_KEY}`);
+        const pictures = await res.json();
+        this.pictures = pictures
+      } catch(e) {
+        console.log(e)
+      }
+    },
+    fetchUserData: async function() {
+      try {
+        const res = await fetch(`https://api.unsplash.com/users/${this.$route.params.username}/photos?per_page=100&order_by=latest&client_id=${process.env.VUE_APP_UNSPLASH_API_ACCESS_KEY}`);
         const pictures = await res.json();
         this.pictures = pictures
       } catch(e) {
