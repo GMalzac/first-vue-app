@@ -68,7 +68,6 @@ h2 {
   text-decoration: none;
 }
 
-
 img {
   height: 20%;
   border-radius: 50%;
