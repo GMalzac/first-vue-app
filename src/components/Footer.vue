@@ -19,7 +19,7 @@ export default {
   footer {
     background-color: #35495E;
     height: 200px;
-    margin-top: 150px;
+    margin-top: 0px;
   }
   h2 {
     line-height: 150px;

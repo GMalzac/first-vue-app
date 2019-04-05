@@ -1,26 +1,13 @@
 <template>
     <transition name="fade">
       <div class="wrapper">
-        <img :src="mainPicturePath" :alt="picture.alt_description" class="main-pic">
+        <div
+          class="image-wrapper"
+          :style="styles">
+        </div>
+
         <div class="info-grid">
-          <div class="user-info-section">
-            <div class="avatar-section">
-              <img :src="picture.user.profile_image.large" :alt="picture.user.username" class="avatar-pic">
-              <h5>{{picture.user.total_photos}} photos posted</h5>
-            </div>
-            <div class="user-detail">
-              <h2>{{picture.user.username}}</h2>
-              <h3 v-if="picture.user.location"> from {{picture.user.location}}</h3>
-              <ul>
-                <li><a v-if="twitterPath" v-bind:href="twitterPath"><font-awesome-icon :icon="{ prefix: 'fab', iconName: 'twitter' }"></font-awesome-icon></a></li>
-                <li><a v-if="instagramPath" v-bind:href="instagramPath"><font-awesome-icon :icon="{ prefix: 'fab', iconName: 'instagram' }"/></font-awesome-icon></a></li>
-                <li><a v-if="picture.user.portfolio_url" v-bind:href="picture.user.portfolio_url"><font-awesome-icon :icon="{ prefix: 'fas', iconName: 'globe' }"/></font-awesome-icon></a></li>
-              </ul>
-            </div>
-            <div class="user-bio">
-              <h4>{{picture.user.bio}}</h4>
-            </div>
-          </div>
+          <UserDetail :picture="picture"></UserDetail>
           <div class="picture-info-section">
             <h4>Posted on {{picture.created_at}}</h4>
             <h2>{{picture.views}} views</h2>
@@ -35,6 +22,8 @@
 </template>
 
 <script>
+  import UserDetail from './UserDetail.vue'
+
   export default {
     name: 'PictureDetail',
     data() {
@@ -45,7 +34,6 @@
     created: function() {
       this.fetchData();
     },
-
     methods: {
       fetchData: async function() {
         try {
@@ -58,16 +46,14 @@
       }
     },
     computed: {
-      twitterPath: function() {
-        return `https://www.twitter.com/${this.picture.user.twitter_username}`
+      styles() {
+        return {
+          background: `url(${this.picture.urls.raw}&fit=crop&w=1080&h=720&dpi=1) no-repeat`
+        }
       },
-      instagramPath: function() {
-        return `https://www.instagram.com/${this.picture.user.instagram_username}`
-      },
-      mainPicturePath: function() {
-        return `${this.picture.urls.raw}&fit=crop&w=1080&h=720&dpi=1`
-      }
-
+    },
+    components: {
+      UserDetail
     }
   };
 </script>
@@ -81,17 +67,21 @@
   display: grid;
   grid-row-gap: 1rem;
   grid-template-columns: 70% 30%;
+  grid-template-rows: 1fr;
 }
 
-.user-info-section {
-  margin-bottom: 40px;
-  text-align: center;
-  border-radius: 3px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  padding: 40px;
-/*  display: grid;
-  grid-row-gap: 1rem;
-  grid-template-columns: 1fr 2fr 3fr;*/
+@media(max-width: 1800px) {
+  .wrapper {
+    display: grid;
+    grid-row-gap: 10%;
+    grid-template-columns: 60% 30%;
+  }
+}
+
+.image-wrapper {
+  position:relative;
+  background-size: cover;
+  background-position: center;
 }
 
 .picture-info-section {
@@ -123,19 +113,10 @@ ul {
   padding: 0px;
 }
 
-a {
-  margin-right: 20px;
-  font-size: 30px;
-  color: #35495E;
-}
-
-a:hover {
-  color: lightgray;
-}
-
 li {
   display: inline;
 }
+
 img .main-pic {
 /*  height: auto;*/
   width: 100%;
@@ -148,16 +129,4 @@ img .main-pic {
   opacity: 0;
   transform: translateX(100%);
 }
-
-.avatar-section {
-  text-align: center;
-}
-
-.avatar-pic {
-  height: 80px;
-  border-radius: 50%;
-  border: solid 1.5px white;
-  box-shadow: 0 0 1px black;
-}
-
 </style>
