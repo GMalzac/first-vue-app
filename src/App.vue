@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header :title = "h_title"/>
-      <div class="minheight">
+      <div class="container">
         <router-view/>
       </div>
     <Footer :title = "f_title"/>
@@ -38,8 +38,14 @@ export default {
   color: #2c3e50;
 }
 
-.minheight {
+.container {
   min-height: calc(100vh - 220px);
+  margin: 0px 0px;
 }
 
+@media (min-width: 1200px) {
+  .container {
+    margin: 0px 100px;
+  }
+};
 </style>

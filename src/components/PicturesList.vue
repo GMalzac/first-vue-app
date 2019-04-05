@@ -48,7 +48,7 @@ li {
     list-style: none;
     padding: 1rem;
     margin: 0;
-    grid-row-gap: 1rem;
+    grid-row-gap: 0.5rem;
     grid-template-columns: repeat(4, 1fr);
   }
 }
@@ -59,18 +59,18 @@ li {
     list-style: none;
     padding: 1rem;
     margin: 0;
-    grid-row-gap: 1rem;
+    grid-row-gap: 0.5rem;
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media(max-width: 1299px) {
+@media(max-width: 1499px) {
   ul {
     display: grid;
     list-style: none;
     padding: 1rem;
     margin: 0;
-    grid-row-gap: 1rem;
+    grid-row-gap: 0.5rem;
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -81,7 +81,7 @@ li {
     list-style: none;
     padding: 1rem;
     margin: 0;
-    grid-row-gap: 1rem;
+    grid-row-gap:  0.5rem;
     grid-template-columns: repeat(1, 1fr);
   }
 }
