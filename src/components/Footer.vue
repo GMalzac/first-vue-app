@@ -18,7 +18,8 @@ export default {
 <style lang="css" scoped>
   footer {
     background-color: #35495E;
-    height: 150px;
+    height: 200px;
+    margin-top: 150px;
   }
   h2 {
     line-height: 150px;

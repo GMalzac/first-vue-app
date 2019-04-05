@@ -2,8 +2,21 @@
     <transition name="fade">
       <div>
         <img :src="picture.urls.regular" :alt="picture.alt_description">
-        <h1>By {{picture.user.username}}</h1>
+        <div class="user-info-section">
+          <h1>Photo by {{picture.user.username}}</h1>
+          <a v-bind:href="twitterPath">Twitter</a>
+<!--           <h2>Twitter {{twitterPath}}</h2> -->
+
+        </div>
+        <div class="picture-info-section">
+
+        </div>
         <h4>Posted on {{picture.created_at}}</h4>
+        <h2>{{picture.views}} views</h2>
+        <h2>{{picture.downloads}} downloads</h2>
+        <ul>
+          <li v-for="tag in picture.tags">#{{tag.title}} </li>
+        </ul>
       </div>
     </transition>
 </template>
@@ -31,10 +44,18 @@
         }
       }
     },
+    computed: {
+      twitterPath: function() {
+        return `https://www.twitter.com/${this.picture.user.twitter_username}`
+      }
+    }
   };
 </script>
 
 <style lang="css" scoped>
+li {
+  display: inline;
+}
 img {
   height: 50vh;
   margin-top: 20px;

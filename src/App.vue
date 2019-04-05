@@ -18,7 +18,7 @@ export default {
     return {
       hello: "Hello world!",
       h_title: "My Unsplash App",
-      f_title: "My footer",
+      f_title: ":)",
       status: "ready",
     }
   },
