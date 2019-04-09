@@ -64,26 +64,25 @@ ul {
   grid-row-gap:  0.5rem;
 }
 
-@media(max-width: 1024px) {
-  ul  {
+@media(min-width: 0px) {
+  ul {
     grid-template-columns: repeat(1, 1fr);
   }
 }
 
-@media(max-width: 1499px) {
+@media(min-width: 1024px) {
   ul {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media(max-width: 1899px) {
+@media(min-width: 1499px) {
   ul {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-
-@media(min-width: 1900px) {
-  ul {;
+@media(min-width: 1800px) {
+  ul {
     grid-template-columns: repeat(4, 1fr);
   }
 }

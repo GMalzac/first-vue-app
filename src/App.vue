@@ -2,6 +2,7 @@
   <div id="app">
     <Header :title = "h_title"/>
       <div class="container">
+        <h1>Latest Pictures</h1>
         <router-view/>
       </div>
     <Footer :title = "f_title"/>

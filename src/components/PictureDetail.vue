@@ -2,10 +2,16 @@
     <transition name="fade">
       <div class="wrapper">
         <div
+          id="show-modal"
           class="image-wrapper"
-          :style="styles">
+          @click="showModal = true"
+          :style="styles"
+          @mouseover="hover = true"
+          @mouseleave="hover = false"
+        >
+            <h2 v-if="hover">View in fullsize</h2>
         </div>
-
+        <Modal v-if="showModal" :picture="picture" @close="showModal = false"></Modal>
         <div class="info-grid">
           <UserDetail :picture="picture"></UserDetail>
           <div class="picture-info-section">
@@ -23,12 +29,15 @@
 
 <script>
   import UserDetail from './UserDetail.vue'
+  import Modal from "./Modal.vue"
 
   export default {
     name: 'PictureDetail',
     data() {
       return {
-        picture: {urls:{regular:""}}
+        picture: {urls:{regular:""}},
+        hover: false,
+        showModal: false,
       };
     },
     created: function() {
@@ -53,7 +62,8 @@
       },
     },
     components: {
-      UserDetail
+      UserDetail,
+      Modal
     }
   };
 </script>
@@ -82,7 +92,22 @@
   position:relative;
   background-size: cover;
   background-position: center;
+  text-align: left;
 }
+
+.image-wrapper h2 {
+  line-height: 100%;
+  color: white;
+  margin: 40px;
+}
+
+.image-wrapper:hover {
+  transition:linear 0.2s;
+  transform: scale(1.01);
+  -webkit-filter: blur(0.5px) grayscale(90%);
+  filter: blur(0.5px) grayscale(90%);
+}
+
 
 .picture-info-section {
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
