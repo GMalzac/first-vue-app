@@ -5,16 +5,15 @@
         <div class="modal-container">
           <div class="modal-body">
             <slot name="body">
+              <button class="modal-default-button" @click="$emit('close')">
+                X
+              </button>
               <img :src= "picturePath">
             </slot>
           </div>
-
           <div class="modal-footer">
             <slot name="footer">
-              default footer
-              <button class="modal-default-button" @click="$emit('close')">
-                OK
-              </button>
+              by {{picture.user.username}}
             </slot>
           </div>
         </div>
